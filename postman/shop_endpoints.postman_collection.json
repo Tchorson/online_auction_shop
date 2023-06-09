@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "10ca4112-f1e4-4f3b-942f-ff03ab504d66",
+		"name": "shop_endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post auth admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost_url}}:{{port}}/api/v1/auth",
+					"host": [
+						"{{localhost_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post auth user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost_url}}:{{port}}/api/v1/auth",
+					"host": [
+						"{{localhost_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4NjI1NTIxNiwiaWF0IjoxNjg2MjUxNjE2fQ.OTsjjcxKcs-6Um8Epr0ogmtsryzZhFCT8Niyi95fJQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost_url}}:{{port}}/api/v1/orders/list",
+					"host": [
+						"{{localhost_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get admin orders from user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4NjEzODkwOCwiaWF0IjoxNjg2MTM1MzA4fQ.pqOT6U_Q_iTMI__72qaNaXNQ9n2fQ6eegyM8nzECd9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost_url}}:{{port}}/api/v1/orders/list/{{username}}",
+					"host": [
+						"{{localhost_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"list",
+						"{{username}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjg2MjQ5NTg1LCJpYXQiOjE2ODYyNDU5ODV9.0Yp2XDHHq6Dy4wyAuq-xZYtd42mEehVu4ON9YxJj_nc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shippingAddress\": \"Cracow, Poland\",\r\n    \"items\": [\r\n        {\r\n        \"name\": \"Effective Java, Fourth edition \",\r\n        \"currency\": \"Dollar\",\r\n        \"price\": 85.99,\r\n        \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost_url}}:{{port}}/api/v1/orders/add",
+					"host": [
+						"{{localhost_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4NjI0OTU0MywiaWF0IjoxNjg2MjQ1OTQzfQ.KasXt61t3qfPJ-WLMMUgJJ6KXbCIN_vzaPND13glJGo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost_url}}:{{port}}/api/v1/orders/remove?id=648212a4095a120b7c8dccb4",
+					"host": [
+						"{{localhost_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"remove"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "648212a4095a120b7c8dccb4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

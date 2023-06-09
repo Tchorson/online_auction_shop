@@ -4,11 +4,12 @@ import com.shops.online_auction_shop.collection.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface OrderRepository extends MongoRepository<Order, String> {
 
-    Order findOrderByCustomer(String username);
-    Order findOrderByCustomerOrOrderNo(String username, String email);
+    List<Order> findOrdersByCustomer(String username);
 
-    Order deleteOrderByCustomerOrOrderNo(String username);
+    void deleteOrderByOrderId(String orderId);
 }

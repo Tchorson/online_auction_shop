@@ -19,14 +19,21 @@ repositories {
 }
 
 dependencies {
+	// MongoRepositories and Document annotations
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	// Authentication mechanism
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	// Web part, controllers,
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// Testing
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+	// Annotations responsible for consistent data flow in endpoints, no missing fields, parameters
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// JWT utils related to preparing token for admin/user
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
-	compileOnly 'org.projectlombok:lombok'
+	// Code reduction
+    compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {

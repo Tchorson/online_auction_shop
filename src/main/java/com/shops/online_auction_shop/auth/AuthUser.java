@@ -17,7 +17,7 @@ public class AuthUser implements UserDetails {
     private String username;
     private String role;
 
-    public AuthUser(User user){
+    public AuthUser(User user) {
         password = user.getPassword();
         username = user.getUsername();
         role = user.getRole();
