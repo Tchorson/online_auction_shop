@@ -81,6 +81,9 @@ Unit tests can be run from the Intellij Idea or by `gradlew test` command.
 - Start postman.
 - Go to personal workspace and navigate to `Environments`. Click `import` and select `shop_endpoints.postman_environment.json` file.
 - Go to `Collections` and click `import` and select  `local_environment.postman_environment.json` file.
+- Click `Post auth admin` or `Post auth user`, depending on your choice and send the request.
+- Copy the token from response and choose another endpoint and click it.
+- Put paste the token in `Authorization` in Bearer Tokenn text input. Token will expire within 1 hour.
 
 ### Postman
 
