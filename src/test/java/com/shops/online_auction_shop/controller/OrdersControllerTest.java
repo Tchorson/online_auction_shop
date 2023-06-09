@@ -3,7 +3,6 @@ package com.shops.online_auction_shop.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shops.online_auction_shop.collection.Item;
 import com.shops.online_auction_shop.collection.Order;
-import com.shops.online_auction_shop.collection.User;
 import com.shops.online_auction_shop.dto.OrderRequest;
 import com.shops.online_auction_shop.enums.OrderStatus;
 import com.shops.online_auction_shop.services.OrderService;
@@ -18,7 +17,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
