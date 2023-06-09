@@ -12,7 +12,10 @@ Spring boot application using mongo database with  docker configuration.
 - [Getting started](#getting-started)
   - [Build project](#build-project)
   - [Run project](#run-project)
-- [Getting started](#getting-started)
+  - [Run unit tests](#run-unit-tests)
+  - [Functionalities tests](#functionalities-tests)
+  - [Postman](#postman)
+  - [Endpoints](#endpoints)
 - [Libraries](#Libraries)
 
 
@@ -75,8 +78,9 @@ Unit tests can be run from the Intellij Idea or by `gradlew test` command.
 ### Functionalities tests
 
 - Run docker-compose command and wait until 2 containers will not be ready.
-- Start postman
-- Go to personal workspace and navigate to `Environments`. Click `import` and select both `shop_endpoints.postman_environment.json` and `local_environment.postman_environment.json` files
+- Start postman.
+- Go to personal workspace and navigate to `Environments`. Click `import` and select `shop_endpoints.postman_environment.json` file.
+- Go to `Collections` and click `import` and select  `local_environment.postman_environment.json` file.
 
 ### Postman
 
