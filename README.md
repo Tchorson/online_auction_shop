@@ -105,5 +105,6 @@ In `postman` folder has been put postman collection with all prepared endpoints 
 - spring-boot-starter-web : building web, RESTful, applications using Spring MVC
 - spring-boot-starter-test : testing Spring Boot applications with JUnit Jupiter, Hamcrest and Mockito
 - spring-boot-starter-validation : Java Bean Validation,  for consistent data flow in endpoints
+- spring-security-test : Testing spring security mechanisms
 - jsonwebtoken : JSON Web Token Support
 - lombok : Code reduction
