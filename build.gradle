@@ -34,6 +34,8 @@ dependencies {
 	// Code reduction
     compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	// Spring security test libraries
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
