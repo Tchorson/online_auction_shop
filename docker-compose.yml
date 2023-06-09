@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb
+    hostname: mongodb
+    restart: on-failure
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_ROOT_PASSWORD
+      - MONGO_INITDB_DATABASE=shop
+      - MONGO_DB_USERNAME=$MONGO_DB_USERNAME
+      - MONGO_DB_PASSWORD=$MONGO_DB_PASSWORD
+    volumes:
+      - $MONGO_INITDB_SCRIPTS_HOST_PATH:/docker-entrypoint-initdb.d
+
+  api:
+    image: shop
+    container_name: shop
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    environment:
+      - SERVER_PORT=8080
+      - SPRING_APPLICATION_NAME=shop
+      - SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE=shop
+      - SPRING_DATA_MONGODB_AUTO_INDEX_CREATION=true
+      - SPRING_DATA_MONGODB_HOST=mongodb
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_USERNAME=$MONGO_DB_USERNAME
+      - SPRING_DATA_MONGODB_PASSWORD=$MONGO_DB_PASSWORD
+      - SPRING_DATA_MONGODB_DATABASE=shop
+    ports:
+      - 8080:8080
+    links:
+      - mongodb:shop
+    restart: on-failure
